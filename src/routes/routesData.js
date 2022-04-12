@@ -2,6 +2,8 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import DashBoard from '../sections/DashBoard';
 import NotFound from '../sections/NotFound';
 
+
+
 export const RoutesData = () => {
 	// DEFINING ROUTES
 
@@ -15,5 +17,5 @@ export const RoutesData = () => {
 		{ path: '*', element: <NotFound /> }
 	]);
 
-	return <div>{element}</div>;
+	return element
 };
