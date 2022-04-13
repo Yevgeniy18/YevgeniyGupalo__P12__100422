@@ -2,23 +2,22 @@ import React from 'react';
 import SportSeeLogo from '../assets/logo/sportSeeLogo.png';
 import '../styles/Header.css';
 import { Link } from 'react-router-dom';
-import styled from "styled-components"
+import styled from 'styled-components';
 
-const StyledLinked = styled(Link)
-`
+const StyledLinked = styled(Link)`
 list-style:none; 
 color: #fff;
 text-decoration:none;
 font-size: 25px;
 font-weight: 800;
-`
+`;
 
 function Header() {
 	return (
 		<header>
-			<div className="logo-container">
+			<StyledLinked to="/" className="logo-container">
 				<img src={SportSeeLogo} alt="sportsee-logo" />
-			</div>
+			</StyledLinked>
 
 			<nav>
 				<ul>

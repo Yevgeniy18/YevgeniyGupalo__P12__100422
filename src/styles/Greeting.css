@@ -1,0 +1,13 @@
+
+.greeting{
+    display: flex;
+    flex-direction: column;
+}
+.greeting-container {
+	color: black;
+	display: flex;
+}
+
+.userName {
+	color: #ff0101;
+}

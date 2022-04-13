@@ -9,16 +9,13 @@ import Icon4 from '../assets/iconsSidebar/icon4.png';
 import '../styles/SideBar.css';
 
 const StyledLink = styled(Link)`
-
 text-decoration:none;
-
-
 `;
 
 function SideBar() {
 	return (
 		<div className="side-bar">
-			<ul className='side-bar-icons'>
+			<ul className="side-bar-icons">
 				<StyledLink to="/">
 					<img src={Icon} alt="icon-1" />
 				</StyledLink>
@@ -34,11 +31,7 @@ function SideBar() {
 				</StyledLink>
 			</ul>
 
-      <p className='copyright'>
-      Copiryght, SportSee 2020
-
-
-      </p>
+			<p className="copyright">Copiryght, SportSee 2020</p>
 		</div>
 	);
 }
