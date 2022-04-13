@@ -6,6 +6,7 @@ import axios from 'axios';
 
 export const FetchMainData = (url) => {
 	const [ mainData, setMainData ] = useState({});
+	const [keyData, setKeyData] = useState({})
 	const [ loading, setLoading ] = useState(true);
 	const [ error, setError ] = useState(false);
 
@@ -16,6 +17,7 @@ export const FetchMainData = (url) => {
 					const res = await axios.get(url);
 
 					setMainData(res.data.data.userInfos);
+					setKeyData(res.data.data.keyData)
 				} catch (error) {
 					setError(true);
 				} finally {
@@ -28,7 +30,7 @@ export const FetchMainData = (url) => {
 		[ url ]
 	);
 
-	return { mainData, loading, error };
+	return { mainData, keyData, loading, error };
 };
 
 export const FetcUserActivity = (url) => {
