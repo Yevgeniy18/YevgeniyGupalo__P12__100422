@@ -1,4 +1,9 @@
-
+.greeting{
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	padding: 25px 40px;
+}
 .data-container {
 	display: flex;
 	align-items: center;

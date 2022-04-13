@@ -1,18 +1,10 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { FetchMainData } from '../API/callingService';
-import '../styles/DashBoard.css';
 import Greeting from '../components/Greeting';
 import Counter from '../components/Counter';
 import Weight from '../components/Charts/Weight';
-// import { renderLineChart } from '../components/Test';
-
-const greeting = {
-	display: 'flex',
-	flexDirection: 'column',
-	width: '80%',
-	padding: '40px'
-};
+import { useParams } from 'react-router-dom';
+import '../styles/DashBoard.css';
 
 function DashBoard() {
 	//RETREVING URL
@@ -22,13 +14,13 @@ function DashBoard() {
 	const userMainData = FetchMainData(`http://localhost:3000/user/${user}`);
 
 	return (
-		<div style={greeting}>
+		<div className="greeting">
 			<Greeting data={userMainData} />
 
 			{/* MAIN DATA & CHARTS */}
 			<div className="data-container">
 				<div className="data-activity">
-					<Weight/>
+					<Weight />
 				</div>
 
 				{/* SIDE PANNEL PERFORMANCE DATA */}
