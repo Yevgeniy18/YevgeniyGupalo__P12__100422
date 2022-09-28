@@ -1,0 +1,95 @@
+.dashboard-main-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.dashboard-grraph-container {
+	display: flex;
+	flex-direction: column;
+	padding: 3rem 0 0 10rem;
+}
+
+.data-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 550px;
+	margin-top: 3rem;
+}
+
+.data-activity {
+	height: 100%;
+	width: 100%;
+	flex: 3;
+	margin-right: 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.data-session-perf {
+	height: 400px;
+	width: 100%;
+	margin-top: 2rem;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.graph-section-main {
+	min-height: 400px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+	.graph-section-main {
+		max-width: 800px;
+	}
+}
+
+.graph-section-left {
+	width: 100%;
+	flex: 1.8;
+}
+
+@media screen and (max-width: 1024px) {
+	.graph-section-left {
+		max-width: 600px;
+		width: 100%;
+	}
+}
+
+.graph-section-right {
+		flex: 1;
+	}
+
+.graphs-upper {
+	max-height: 230px;
+	height: 100%;
+	width: 100%;
+	background-color: #fbfbfb;
+	border-radius: 10px;
+	margin-bottom: 1rem;
+}
+.graphs-lower {
+	max-height: 250px;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.info-pannel {
+	height: 50px;
+	width: 100%;
+}
+
+/* .weight-graph {
+	max-width: 800px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+} */

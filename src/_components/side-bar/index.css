@@ -1,0 +1,27 @@
+.side-bar {
+	position: absolute;
+	width: 120px;
+	height: 120vh;
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.side-bar-icons {
+	display: flex;
+	flex-direction: column;
+	height: 400px;
+}
+
+.copyright {
+	color: #fff;
+	transform: rotate(-90deg);
+	height: 40px;
+	width: 140px;
+	font-size: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

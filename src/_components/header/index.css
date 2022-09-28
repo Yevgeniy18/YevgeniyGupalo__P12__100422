@@ -1,0 +1,26 @@
+header {
+	height: 12vh;
+	background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.logo-container {
+	width: 178px;
+}
+
+.logo-container img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    width: 90%;
+}
+ul {
+    display: flex;
+    justify-content: space-around;
+}

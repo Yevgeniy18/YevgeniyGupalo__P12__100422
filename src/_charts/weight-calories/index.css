@@ -1,0 +1,58 @@
+.weight-container {
+	display: flex;
+	flex-direction: column;
+	background-color: #FBFBFB;
+	padding: 1rem;
+	border-radius: 5px;
+}
+
+.info-pannel {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.info-pannel h4 {
+	font-size: 15px;
+}
+
+.weight-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 250px;
+	width: 100%;
+	font-weight: 600;
+}
+.weight-list li {
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+
+.weight-list p {
+	font-size: 14px;
+	margin-left: 0.5rem;
+}
+
+.weight {
+	height: 8px;
+	width: 8px;
+	border-radius: 50%;
+	display: inline-block;
+	background-color: #282d30;
+}
+
+.calories {
+	height: 8px;
+	width: 8px;
+	border-radius: 50%;
+	display: inline-block;
+	background-color: #e60000;
+}
+
+
+.weight-calories-container{
+
+	width: 100%;
+	margin-top: 0.5rem;
+}

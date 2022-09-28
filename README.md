@@ -15,6 +15,9 @@
 * `npm install` command for required dependencies
 * `npm start` to start off the frontend
 
+## Important !
+* Make sure to start the backend first !
+
 ### Endpooints and additional routing 
 
 The API provides 2 users, 12 and 18 respectively 
