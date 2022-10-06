@@ -7,13 +7,6 @@
 	align-items: center;
 }
 
-/* @media screen and (max-width: 1024px) {
-	.data-performance {
-
-	}
-	
-} */
-
 .performance-items {
 	height: 124px;
 	min-width: 200px;

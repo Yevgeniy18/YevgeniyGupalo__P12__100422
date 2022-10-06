@@ -33,7 +33,8 @@ export default class FormatDataClass {
 	/********************* RADAR CHART Indicators ********************/
 
 	formatPerformance(data) {
-		// const indicators = { 1: 'Intensité', 2: 'Vitesse', 3: 'Force', 4: 'Endurance', 5: 'Energie', 6: 'Cardio' };
+		const indicators = { 1: 'cardio', 2: 'energie', 3: 'endurance', 4: 'force', 5: 'vitesse', 6: 'intensité' };
+		const newIndicators = Object.entries(indicators);
 
 		const newKind = Object.entries(data.kind);
 		const newData = data.data;
@@ -43,6 +44,16 @@ export default class FormatDataClass {
 			newData.forEach((elt) => {
 				if (parseInt(key) === elt.kind) {
 					elt['name'] = value;
+				}
+			});
+		});
+
+		/* Setting French wording for performance indicators */
+
+		newIndicators.forEach(([ key, value ]) => {
+			newData.forEach((elt) => {
+				if (parseInt(key) === elt.kind) {
+					elt.name = value;
 				}
 			});
 		});
@@ -87,13 +98,12 @@ export default class FormatDataClass {
 
 	formatMainData(data) {
 		const newData = { ...data };
-
 		newData['scores'] = [];
 		newData.todayScore = newData.todayScore * 100;
-		const newScore = { uv: newData.todayScore, fill: "#FF0000"};
+		const newScore = { uv: newData.todayScore, fill: '#FF0000' };
 		newData['scores'].push(newScore);
 		delete newData.todayScore;
-		return newData
+		return newData;
 	}
 
 	/************************************************************************/

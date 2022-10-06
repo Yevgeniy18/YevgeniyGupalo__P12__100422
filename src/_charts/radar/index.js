@@ -5,7 +5,7 @@ function RadarInfo({ data }) {
 	return (
 		<section className="radar-container">
 			<ResponsiveContainer width="100%" height="100%" >
-				<RadarChart cx="50%" cy="50%" height={250} width={250} innerRadius="0" outerRadius="80%" margin={{top: 5, right: 5, bottom: 5, left: 5 }} data={data.data}>
+				<RadarChart cx="50%" cy="50%" height={250} width={250}  outerRadius="70%" margin={{top: 5, right: 5, bottom: 5, left: 5 }} data={data.data}>
 					<PolarGrid />
 					<PolarAngleAxis dataKey="name" tick={{ fill: '#fff', fontSize: 10 }} margin={{bottom:5, top:5}} />
 					<PolarRadiusAxis domain={[ 0, 150 ]} style={{ display: 'none' }} />

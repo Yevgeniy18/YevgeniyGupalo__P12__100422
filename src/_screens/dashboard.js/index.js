@@ -1,14 +1,20 @@
 import React from 'react';
-import { FetchMainData, FetcUserActivity, FetchUserPerformance, FetchUserAverageSessions } from '../../_API-Service/index'
+import {
+	FetchMainData,
+	FetcUserActivity,
+	FetchUserPerformance,
+	FetchUserAverageSessions
+} from '../../_API-Service/index';
 import Greeting from '../../_components/greeting/index';
 import Counter from '../../_components/counter/index';
 import Weight from '../../_charts/weight-calories/index';
 import AreaInfo from '../../_charts/area/index';
 import Radarinfo from '../../_charts/radar/index';
 import ScoreInfo from '../../_charts/score/index';
+import Error404 from '../../_components/errors/url-error';
 import './index.css';
 
-function DashBoard({user}) {
+function DashBoard({ user }) {
 	/* Getting the user id from the url,
 	 * the id will be then used in the urls below to fetch the needed data
 	 */
@@ -20,12 +26,13 @@ function DashBoard({user}) {
 	const userPerformance = FetchUserPerformance(`http://localhost:3000/user/${user}/performance`);
 	const userAverageSession = FetchUserAverageSessions(`http://localhost:3000/user/${user}/average-sessions`);
 
+	const serverError = userMainData.error || userActivity.error || userPerformance.error || userAverageSession.error;
 
 	return (
 		<section className="dashboard-main-wrapper">
-			{/* If the data fetching fails, an arror is triggere and displays the error components */}
-
-
+			{serverError ? (
+				<Error404 />
+			) : (
 				<div className="dashboard-grraph-container">
 					{/* if everything works fine, the  styled dashboard gets displayed */}
 					<Greeting data={userMainData} />
@@ -62,7 +69,8 @@ function DashBoard({user}) {
 						</div>
 					</div>
 				</div>
-
+			)}
+			{/* If the data fetching fails, an arror is triggere and displays the error components */}
 		</section>
 	);
 }

@@ -23,3 +23,10 @@
 	align-items: center;
 	padding: 2rem;
 }
+
+@media screen and (max-width: 1024px) {
+	.error-container {
+		margin: 30% auto;
+	}
+	
+}

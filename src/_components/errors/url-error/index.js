@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import "./index"
+import './index.css';
 
 const StyledLink = styled(Link)`
 text-decoration: none;
@@ -23,7 +23,6 @@ function Error404() {
 					<h1 style={{ fontSize: '100px', color: 'red' }} className="error">
 						404
 					</h1>
-
 					<span />
 					<span />
 					<span />
