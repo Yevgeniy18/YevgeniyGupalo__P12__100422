@@ -44,15 +44,9 @@
 	margin-top: 1rem;
 }
 
-@media screen and (max-width: 1024px) {
-	.graph-section-main {
-		max-width: 800px;
-	}
-}
-
 .graph-section-left {
 	width: 100%;
-	flex: 1.8;
+	min-width: 550px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -63,33 +57,28 @@
 }
 
 .graph-section-right {
-		flex: 1;
-	}
+	width: 30%;
+}
 
 .graphs-upper {
-	max-height: 230px;
-	height: 100%;
+	min-height: 230px;
 	width: 100%;
 	background-color: #fbfbfb;
 	border-radius: 10px;
 	margin-bottom: 1rem;
 }
 .graphs-lower {
-	max-height: 250px;
-	height: 100%;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	padding: 0 1rem;
 }
+
+@media screen and (max-width: 1024px) {
+}
+
 .info-pannel {
 	height: 50px;
 	width: 100%;
+	padding: 0 1rem;
 }
-
-/* .weight-graph {
-	max-width: 800px;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-} */

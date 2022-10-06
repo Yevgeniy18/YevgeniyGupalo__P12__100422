@@ -1,5 +1,5 @@
 export default class FormatDataClass {
-	/********************* BAR CHART ********************/
+	/********************* BAR CHART Calories/Weight ********************/
 
 	/***** Retreiving main data for the CaloriesSpent/Weight Chart *****/
 
@@ -30,9 +30,11 @@ export default class FormatDataClass {
 
 	/************************************************************************/
 
-	/********************* RADAR CHART ********************/
+	/********************* RADAR CHART Indicators ********************/
 
 	formatPerformance(data) {
+		// const indicators = { 1: 'Intensité', 2: 'Vitesse', 3: 'Force', 4: 'Endurance', 5: 'Energie', 6: 'Cardio' };
+
 		const newKind = Object.entries(data.kind);
 		const newData = data.data;
 		/** Merging Existing data so that it can be used easier when rendering the radar chart **/
@@ -56,9 +58,43 @@ export default class FormatDataClass {
 
 	/************************************************************************/
 
-	/********************* AREA CHART ********************/
+	/********************* LINE CHART Average Session ********************/
+
+	formatSessions(data) {
+		const days = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' };
+
+		const arrDays = Object.entries(days);
+
+		for (let elt = 0; elt < data.length; elt++) {
+			for (let i = 0; i < arrDays.length; i++) {
+				if (data[elt].day === parseInt(arrDays[i][0])) {
+					data[elt].day = arrDays[i][1];
+				}
+			}
+		}
+		const minValue = { day: '', sessionLength: 10 };
+		data.unshift(minValue);
+
+		const maxValue = { day: '', sessionLength: 80 };
+		data.push(maxValue);
+
+		return data;
+	}
+
 	/************************************************************************/
 
-	/********************* PIE CHART ********************/
+	/********************* Radial CHART Score ********************/
+
+	formatMainData(data) {
+		const newData = { ...data };
+
+		newData['scores'] = [];
+		newData.todayScore = newData.todayScore * 100;
+		const newScore = { uv: newData.todayScore, fill: "#FF0000"};
+		newData['scores'].push(newScore);
+		delete newData.todayScore;
+		return newData
+	}
+
 	/************************************************************************/
 }

@@ -1,8 +1,8 @@
 import React from 'react';
-import "./index.css"
+import './index.css';
 function Greeting({ data }) {
-	// GETTING USER NAME
-	let userName = data.mainData.firstName;
+	/*** Getting the name and using the dynamic data into html */
+	const userName = data.name;
 
 	return (
 		<div className="greeting">

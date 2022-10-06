@@ -3,8 +3,7 @@ import Energy from '../../assets/icon/calories.png';
 import Protein from '../../assets/icon/protein.png';
 import Carb from '../../assets/icon/carbs.png';
 import Lipid from '../../assets/icon/fat.png';
-import "./index.css"
-
+import './index.css';
 
 function Counter({ data }) {
 	let calories = data.keyData.calorieCount;
@@ -13,7 +12,7 @@ function Counter({ data }) {
 	let lipids = data.keyData.lipidCount;
 
 	return (
-		<div className="data-performance">
+		<section className="data-performance">
 			<div className="performance-items">
 				<div className="performance-icon">
 					<img src={Energy} alt="calories" />
@@ -50,7 +49,7 @@ function Counter({ data }) {
 					<p>Lipides</p>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }
 

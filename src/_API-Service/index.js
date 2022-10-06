@@ -1,19 +1,26 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import FormatDataClass from '../../_formaters/formatData';
+import FormatDataClass from '../_formaters/formatData';
+
+/* Defining functions for each typeo of data */
 
 export const FetchMainData = (url) => {
-	const [ mainData, setMainData ] = useState({});
+	/* Defining initial states */
+	const [ data, setData ] = useState({});
 	const [ keyData, setKeyData ] = useState({});
+	const [ name, setName ] = useState('');
 	const [ loading, setLoading ] = useState(true);
 	const [ error, setError ] = useState(false);
+
+	/* Implementing useEffect and watching url for dependencies */
 
 	useEffect(
 		() => {
 			const fetchUserData = async () => {
 				try {
 					const res = await axios.get(url);
-					setMainData(res.data.data.userInfos);
+					setData(new FormatDataClass().formatMainData(res.data.data));
+					setName(res.data.data.userInfos.firstName);
 					setKeyData(res.data.data.keyData);
 				} catch (error) {
 					setError(true);
@@ -28,16 +35,17 @@ export const FetchMainData = (url) => {
 	);
 
 	/***** Formating Score converting to the percentage ****/
-
-	return { mainData, keyData, loading, error };
+	return { data, name, keyData, loading, error };
 };
 
 export const FetcUserActivity = (url) => {
+	/* Defining initial states */
 	const [ data, setData ] = useState();
 	const [ maxWeight, setMaxWeight ] = useState(0);
 	const [ minWeight, setMinWeight ] = useState(0);
 	const [ loading, setLoading ] = useState(true);
 	const [ error, setError ] = useState(false);
+	/* Implementing useEffect and watching url for dependencies */
 
 	useEffect(
 		() => {
@@ -62,10 +70,42 @@ export const FetcUserActivity = (url) => {
 	return { data, maxWeight, minWeight, loading, error };
 };
 
+export const FetchUserAverageSessions = (url) => {
+	/* Defining initial states */
+	const [ data, setData ] = useState({});
+	const [ loading, setLoading ] = useState(false);
+	const [ error, setError ] = useState(false);
+	/* Implementing useEffect and watching url for dependencies */
+
+	useEffect(
+		() => {
+			const fetchSessions = async () => {
+				try {
+					const res = await axios.get(url);
+
+					setData(new FormatDataClass().formatSessions(res.data.data.sessions));
+				} catch (err) {
+					setError(true);
+				} finally {
+					setLoading(false);
+				}
+			};
+
+			fetchSessions();
+		},
+		[ url ]
+	);
+
+	return { data, loading, error };
+};
+
 export const FetchUserPerformance = (url) => {
+	/* Defining initial states */
 	const [ data, setData ] = useState();
 	const [ loading, setLoading ] = useState(true);
 	const [ error, setError ] = useState(false);
+
+	/* Implementing useEffect and watching url for dependencies */
 
 	useEffect(
 		() => {

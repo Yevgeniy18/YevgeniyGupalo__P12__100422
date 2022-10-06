@@ -1,38 +1,58 @@
-.score-container {
+.area-container {
 	height: 280px;
 	width: 32%;
 	border-radius: 5px;
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #FBFBFB;
+	flex-direction: column;
+	justify-content: flex-end;
+	/* align-items: baseline; */
+	background-color: #ff0000;
 	position: relative;
 }
 
 @media screen and (max-width: 1024px) {
-	.score-container {
+	.area-container {
 		height: 220px;
 		width: 32%;
 	}
 }
 
-.score-title-container {
+.area-title-container {
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	color: black;
 }
 
-.score-title-container h2 {
+.area-title-container h2 {
 	font-size: 15px;
 	width: 150px;
 	margin: 2rem 1.5rem;
-	color: #000;
+	color: #ffffff;
 	mix-blend-mode: normal;
+	opacity: 0.5;
 }
 
 @media screen and (max-width: 1024px) {
 	.area-title-container h2 {
 		font-size: 12px;
+		
 	}
+}
+
+.area-path{
+	color: yellow;
+	margin-bottom: 5rem;
+	
+
+}
+
+.area{
+	background-color: red;
+}
+
+.x-axis{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
