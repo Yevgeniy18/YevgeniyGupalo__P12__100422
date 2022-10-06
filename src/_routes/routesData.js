@@ -1,6 +1,6 @@
 import { Navigate, useRoutes } from 'react-router-dom';
-import DashBoard from '../_dashboard/index';
-import NotFound from '../_components/errors/user-error/index';
+import HomeScren from '../_screens/home-screen.js/index';
+import Error404 from '../_components/errors/url-error';
 
 export const RoutesData = () => {
 	let element = useRoutes([
@@ -9,11 +9,19 @@ export const RoutesData = () => {
 		 */
 		{
 			path: '/',
+			/* When launching the app, the user is redirected to a specific url with a preset id */
 			element: <Navigate to="/dashboard/12" replace={true} />
 		},
 
-		{ path: '/dashboard/:user', element: <DashBoard /> },
-		{ path: '*', element: <NotFound /> }
+		{
+			path: '/dashboard/:user',
+			element: <HomeScren />
+		},
+		/* If the url isnt correct, redirecting to error component */
+		{
+			path: '*',
+			element: <Error404 />
+		}
 	]);
 
 	return element;

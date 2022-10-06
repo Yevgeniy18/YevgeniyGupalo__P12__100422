@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import PuffLoader from 'react-spinners/PuffLoader';
+import "./index.css"
 const override = css`
 	display: block;
 	border-color: red;
@@ -20,9 +21,9 @@ function NotFound() {
 	return (
 		<div className="error-wrapper">
 			<div className="error-container">
-				<h2 style={{ color: '#fff' }}>Ooops! On dirait qu'il y a une erreur</h2>
+				<h2 style={{ color: '#fff' }}>Ooops! On dirait que l'utlisateur n"exsite pas</h2>
 				<PuffLoader color={color} loading={loading} css={override} size={70} />
-				<StyledLink to="/">Retour vers la page d'accueil</StyledLink>
+				<StyledLink to="/">Retour en arriere</StyledLink>
 			</div>
 		</div>
 	);

@@ -20,7 +20,7 @@ function Weight({ data }) {
 					axisLine={false}
 					dx={20}
 					tickLine={false}
-					domain={[ data.maxWeight ]}
+					domain={[ 60, data.maxWeight ]}
 				/>
 				<YAxis yAxisId="left" orientation="left" dataKey="calories" axisLine={false} tick={false} />
 				<XAxis dataKey="day" scale="point" tickLine={false} dy={10} axisLine={false} />
