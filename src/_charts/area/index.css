@@ -56,3 +56,11 @@
 	align-items: center;
 	justify-content: center;
 }
+
+.area{
+	padding: 6px;
+	font-size: 11px;
+	background-color: #fff;
+	color: black;
+	font-weight: 600;
+}

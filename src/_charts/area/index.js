@@ -1,6 +1,20 @@
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import './index.css';
 
+const CustomTooltip = ({ active, payload, label }) => {
+	if (active && payload && payload.length) {
+		console.log(payload)
+		return (
+		
+			<div className="area">
+				<p>{`${payload[0].value}`} min</p>
+			</div>
+		);
+	}
+
+	return null;
+};
+
 function AreaInfo({ data }) {
 	return (
 		<section className="area-container">
@@ -15,9 +29,9 @@ function AreaInfo({ data }) {
 						axisLine={false}
 						padding={{ left: -10, top: 10, bottom: 0, right: -10 }}
 						tickLine={false}
-						tick={{ stroke: 'white', strokeWidth: 1, opacity: '0.5', fontSize:12}}
+						tick={{ stroke: 'white', strokeWidth: 1, opacity: '0.5', fontSize: 12 }}
 					/>
-					<Tooltip />
+					<Tooltip content={<CustomTooltip />} />
 					<Line type="monotone" dot={false} dataKey="sessionLength" stroke="#fff" strokeWidth={2} />
 				</LineChart>
 			</ResponsiveContainer>

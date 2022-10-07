@@ -51,7 +51,7 @@
 
 @media screen and (max-width: 1024px) {
 	.graph-section-left {
-		max-width: 600px;
+		max-width: 650px;
 		width: 100%;
 	}
 }
@@ -81,4 +81,9 @@
 	height: 50px;
 	width: 100%;
 	padding: 0 1rem;
+}
+
+.info-pannel h4{
+	color: #20253A;
+	font-weight: bold;
 }

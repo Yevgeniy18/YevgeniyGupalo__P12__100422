@@ -8,9 +8,7 @@ function App() {
 		<div className="App">
 			<Header />
 			<SideBar />
-		
-				<RoutesData />;
-			
+			<RoutesData />
 		</div>
 	);
 }

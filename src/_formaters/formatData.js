@@ -99,8 +99,8 @@ export default class FormatDataClass {
 	formatMainData(data) {
 		const newData = { ...data };
 		newData['scores'] = [];
-		newData.todayScore = newData.todayScore * 100;
-		const newScore = { uv: newData.todayScore, fill: '#FF0000' };
+		newData.score = newData.score * 100;
+		const newScore = { uv: newData.score, fill: '#FF0000' };
 		newData['scores'].push(newScore);
 		delete newData.todayScore;
 		return newData;

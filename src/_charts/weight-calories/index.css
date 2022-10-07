@@ -54,3 +54,25 @@
 	width: 100%;
 	margin-top: 0.5rem;
 }
+
+.custom-tooltip {
+	background-color: #e60000;
+	color: #fff;
+	padding: 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	font-family: "Roboto" sans-serif;
+	min-height: 80px;
+}
+
+.kg {
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.cal {
+	font-size: 12px;
+	font-weight: 600;
+}
