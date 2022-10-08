@@ -2,6 +2,8 @@
 
 ## Analytical Dashboard with React
 
+## Prerequisites
+* Node.js
 
 ## Installation Backend
 
