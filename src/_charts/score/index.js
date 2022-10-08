@@ -1,12 +1,22 @@
-import { RadialBarChart, RadialBar, PolarAngleAxis, Label, ResponsiveContainer } from 'recharts';
+import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import './index.css';
 
 function ScoreInfo({ data }) {
-
-	console.log(data)
 	const mainData = data.data.scores;
 
-	const percentage = data.data.todayScore;
+
+	/* Displaying data according to api outcome */
+	const dataHandler = () => {
+		let percentage;
+		if (data.data.todayScore) {
+			percentage = data.data.todayScore;
+
+			return <h2>{percentage}%</h2>;
+		} else if (data.data.score) {
+			percentage = data.data.score;
+			return <h2>{percentage}%</h2>;
+		} else return;
+	};
 
 	return (
 		<section className="score-container">
@@ -14,7 +24,7 @@ function ScoreInfo({ data }) {
 
 			<article className="score-area">
 				{' '}
-				<h2>{percentage}%</h2>
+				{dataHandler()}
 				<p>de votre objectif</p>
 			</article>
 			<ResponsiveContainer width="100%" height="100%">
