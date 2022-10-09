@@ -16,6 +16,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 function Weight({ data }) {
+
 	return (
 		<ResponsiveContainer width="100%" height={200} padding={{ left: 10, right: 10 }}>
 			<BarChart

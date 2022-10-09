@@ -2,10 +2,27 @@ import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from '
 import './index.css';
 
 function ScoreInfo({ data }) {
-	const mainData = data.data.scores;
 
+	/**
+	 * 
+	 * @returns Dynamic array according to the data passed to the functional component
+	 */
+	const handleDisplay = () => {
+
+		let dynamicArray 
+		if(data?.data.scores){
+			dynamicArray = data.data.scores
+		} else if(data?.scores){
+			dynamicArray = data.scores
+		}
+
+		return dynamicArray
+	}
+
+	handleDisplay()
 
 	/* Displaying data according to api outcome */
+
 	const dataHandler = () => {
 		let percentage;
 		if (data.data.todayScore) {
@@ -18,13 +35,27 @@ function ScoreInfo({ data }) {
 		} else return;
 	};
 
+	const handlePercentageDisplay = () => {
+
+	let percentage 
+
+		if(data?.todayScore){
+			percentage = data.todayScore
+			return <h2>{percentage}%</h2>;
+		
+		} else if(data?.data){
+		  return dataHandler(data.data)
+			
+		}
+	}
+
 	return (
 		<section className="score-container">
 			<div className="score-title-container" />
 
 			<article className="score-area">
 				{' '}
-				{dataHandler()}
+				{handlePercentageDisplay()}
 				<p>de votre objectif</p>
 			</article>
 			<ResponsiveContainer width="100%" height="100%">
@@ -36,10 +67,10 @@ function ScoreInfo({ data }) {
 					startAngle={140}
 					endAngle={-295}
 					barSize={10}
-					data={mainData}
+					data={handleDisplay()}
 				>
 					<PolarAngleAxis type="number" domain={[ 0, 100 ]} dataKey={'uv'} angleAxisId={0} tick={false} />
-					<RadialBar minAngle={50} dataKey="uv" angleAxisId={0} data={mainData} />
+					<RadialBar minAngle={50} dataKey="uv" angleAxisId={0} data={handleDisplay()} />
 				</RadialBarChart>
 			</ResponsiveContainer>
 		</section>

@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import FormatDataClass from '../_formaters/formatData';
 
-/* Defining functions for each typeo of data */
+/**
+ * 
+ * @param {*} url 
+ * @returns {data, name, keyData, loading, error}
+ */
 
 export const FetchMainData = (url) => {
 	/* Defining initial states */
@@ -19,6 +23,10 @@ export const FetchMainData = (url) => {
 			const fetchUserData = async () => {
 				try {
 					const res = await axios.get(url);
+
+					/**
+					 * Passing respose into the class method for data formatting
+					 */
 					setData(new FormatDataClass().formatMainData(res.data.data));
 					setName(res.data.data.userInfos.firstName);
 					setKeyData(res.data.data.keyData);
@@ -52,6 +60,9 @@ export const FetcUserActivity = (url) => {
 			const fetchActivityData = async () => {
 				try {
 					const res = await axios.get(url);
+					/**
+					 * Passing respose into the class method for data formatting
+					 */
 					setMaxWeight(new FormatDataClass().getMaxWeight(res.data.data.sessions));
 					setMinWeight(new FormatDataClass().getMinWeight(res.data.data.sessions));
 					setData(new FormatDataClass().formatSessionData(res.data.data.sessions));
@@ -82,7 +93,9 @@ export const FetchUserAverageSessions = (url) => {
 			const fetchSessions = async () => {
 				try {
 					const res = await axios.get(url);
-
+					/**
+					 * Passing respose into the class method for data formatting
+					 */
 					setData(new FormatDataClass().formatSessions(res.data.data.sessions));
 				} catch (err) {
 					setError(true);
@@ -105,13 +118,15 @@ export const FetchUserPerformance = (url) => {
 	const [ loading, setLoading ] = useState(true);
 	const [ error, setError ] = useState(false);
 
-	/* Implementing useEffect and watching url for dependencies */
 
 	useEffect(
 		() => {
 			const fetchPerformanceData = async () => {
 				try {
 					const res = await axios.get(url);
+					/**
+					 * Passing respose into the class method for data formatting
+					 */
 					setData(new FormatDataClass().formatPerformance(res.data.data));
 				} catch (error) {
 					setError(true);

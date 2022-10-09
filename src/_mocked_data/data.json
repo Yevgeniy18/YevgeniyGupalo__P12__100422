@@ -1,0 +1,75 @@
+[
+	{
+		"id": 12,
+		"keyData": { "calorieCount": 1930, "proteinCount": 155, "carbohydrateCount": 290, "lipidCount": 50 },
+		"todayScore": 12,
+		"userInfos": { "firstName": "Karl", "lastName": "Dovineau", "age": 31 },
+		"scores": [ { "uv": 12, "fill": "#FF0000" } ],
+		"data": [
+			{ "day": 1, "kilogram": 80, "calories": 160 },
+			{ "day": 2, "kilogram": 78, "calories": 162 },
+			{ "day": 3, "kilogram": 76, "calories": 390 },
+			{ "day": 4, "kilogram": 80, "calories": 240 },
+			{ "day": 5, "kilogram": 80, "calories": 220 },
+			{ "day": 6, "kilogram": 81, "calories": 280 },
+			{ "day": 7, "kilogram": 81, "calories": 290 }
+		],
+		"sessionsTime": [
+			{ "day": "", "sessionLength": 10 },
+			{ "day": "L", "sessionLength": 30 },
+			{ "day": "M", "sessionLength": 23 },
+			{ "day": "M", "sessionLength": 45 },
+			{ "day": "J", "sessionLength": 50 },
+			{ "day": "V", "sessionLength": 0 },
+			{ "day": "S", "sessionLength": 0 },
+			{ "day": "D", "sessionLength": 60 },
+			{ "day": "", "sessionLength": 80 }
+		],
+		"kind": { "1": "cardio", "2": "energy", "3": "endurance", "4": "strength", "5": "speed", "6": "intensity" },
+		"performanceData": [
+			{ "value": 80, "kind": 1, "name": "Cardio" },
+			{ "value": 120, "kind": 2, "name": "Energie" },
+			{ "value": 140, "kind": 3, "name": "Endurance" },
+			{ "value": 50, "kind": 4, "name": "Force" },
+			{ "value": 200, "kind": 5, "name": "Vitesse" },
+			{ "value": 90, "kind": 6, "name": "Intensité" }
+		]
+	},
+
+	{
+		"id": 18,
+		"keyData": { "calorieCount": 2500, "proteinCount": 90, "carbohydrateCount": 150, "lipidCount": 120 },
+		"todayScore": 30,
+		"userInfos": { "firstName": "Cecilia", "lastName": "Ratorez", "age": 34 },
+		"scores": [ { "uv": 30, "fill": "#FF0000" } ],
+		"data": [
+			{ "day": 1, "kilogram": 69, "calories": 160 },
+			{ "day": 2, "kilogram": 69, "calories": 162 },
+			{ "day": 3, "kilogram": 69, "calories": 390 },
+			{ "day": 4, "kilogram": 70, "calories": 240 },
+			{ "day": 5, "kilogram": 69, "calories": 220 },
+			{ "day": 6, "kilogram": 70, "calories": 280 },
+			{ "day": 7, "kilogram": 70, "calories": 500 }
+		],
+		"sessionsTime": [
+			{ "day": "", "sessionLength": 10 },
+			{ "day": "L", "sessionLength": 30 },
+			{ "day": "M", "sessionLength": 40 },
+			{ "day": "M", "sessionLength": 50 },
+			{ "day": "J", "sessionLength": 30 },
+			{ "day": "V", "sessionLength": 30 },
+			{ "day": "S", "sessionLength": 50 },
+			{ "day": "D", "sessionLength": 50 },
+			{ "day": "", "sessionLength": 80 }
+		],
+		"kind": { "1": "cardio", "2": "energy", "3": "endurance", "4": "strength", "5": "speed", "6": "intensity" },
+		"performanceData": [
+			{ "value": 200, "kind": 1, "name": "Cardio" },
+			{ "value": 240, "kind": 2, "name": "Energie" },
+			{ "value": 80, "kind": 3, "name": "Endurance" },
+			{ "value": 80, "kind": 4, "name": "Force" },
+			{ "value": 220, "kind": 5, "name": "Vitesse" },
+			{ "value": 110, "kind": 6, "name": "Intensité" }
+		]
+	}
+]

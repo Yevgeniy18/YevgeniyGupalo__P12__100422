@@ -1,3 +1,4 @@
+import React from 'react';
 import { RoutesData } from './_routes/routesData';
 import Header from './_components/header/index';
 import SideBar from './_components/side-bar/index';

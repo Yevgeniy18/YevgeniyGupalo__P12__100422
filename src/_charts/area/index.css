@@ -36,28 +36,25 @@
 @media screen and (max-width: 1024px) {
 	.area-title-container h2 {
 		font-size: 12px;
-		
 	}
 }
 
-.area-path{
+.area-path {
 	color: yellow;
 	margin-bottom: 5rem;
-	
-
 }
 
-.area{
+.area {
 	background-color: red;
 }
 
-.x-axis{
+.x-axis {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.area{
+.area {
 	padding: 6px;
 	font-size: 11px;
 	background-color: #fff;

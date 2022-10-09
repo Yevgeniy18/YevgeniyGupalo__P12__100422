@@ -1,9 +1,11 @@
 export default class FormatDataClass {
 	/********************* BAR CHART Calories/Weight ********************/
 
-	/***** Retreiving main data for the CaloriesSpent/Weight Chart *****/
-
-	/***** Getting Max and Min Weight *****/
+	/**
+	 * 
+	 * @param {*} data 
+	 * @returns {Number}
+	 */
 	getMaxWeight(data) {
 		const weightNums = data.map((object) => {
 			return object.kilogram;
@@ -11,7 +13,11 @@ export default class FormatDataClass {
 		const max = Math.max(...weightNums);
 		return max;
 	}
-
+	/**
+	 * 
+	 * @param {*} data 
+	 * @returns {Number}
+	 */
 	getMinWeight(data) {
 		const weightNums = data.map((object) => {
 			return object.kilogram;
@@ -19,6 +25,12 @@ export default class FormatDataClass {
 		const min = Math.min(...weightNums);
 		return min;
 	}
+
+	/**
+	 * 
+	 * @param {*} data 
+	 * @returns {data} Sortes by day
+	 */
 
 	formatSessionData(data) {
 		data.forEach((elt) => {
@@ -32,13 +44,17 @@ export default class FormatDataClass {
 
 	/********************* RADAR CHART Indicators ********************/
 
+	/**
+		 * 
+		 * @param {*} data 
+		 * @returns {newData} new array with merged and foramatted elements
+		 */
 	formatPerformance(data) {
 		const indicators = { 1: 'cardio', 2: 'energie', 3: 'endurance', 4: 'force', 5: 'vitesse', 6: 'intensité' };
 		const newIndicators = Object.entries(indicators);
 
 		const newKind = Object.entries(data.kind);
 		const newData = data.data;
-		/** Merging Existing data so that it can be used easier when rendering the radar chart **/
 
 		newKind.forEach(([ key, value ]) => {
 			newData.forEach((elt) => {
@@ -48,8 +64,6 @@ export default class FormatDataClass {
 			});
 		});
 
-		/* Setting French wording for performance indicators */
-
 		newIndicators.forEach(([ key, value ]) => {
 			newData.forEach((elt) => {
 				if (parseInt(key) === elt.kind) {
@@ -57,8 +71,6 @@ export default class FormatDataClass {
 				}
 			});
 		});
-
-		/****** Setting the first letter to uppercase ******/
 
 		newData.forEach((elt) => {
 			elt.name = elt.name.charAt(0).toUpperCase() + elt.name.slice(1).toLowerCase();
@@ -71,6 +83,12 @@ export default class FormatDataClass {
 
 	/********************* LINE CHART Average Session ********************/
 
+	/**
+	 * 
+	 * @param {*} data 
+	 * @returns {data}
+	 * Creating a new object with formatted elements
+	 */
 	formatSessions(data) {
 		const days = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' };
 
@@ -95,7 +113,12 @@ export default class FormatDataClass {
 	/************************************************************************/
 
 	/********************* Radial CHART Score ********************/
-
+	/**
+	 * 
+	 * @param {*} data 
+	 * @returns {newData}
+	 * Transforming the exisitng object so that the values could be used easier 
+	 */
 	formatMainData(data) {
 		const newData = { ...data };
 		newData['scores'] = [];
