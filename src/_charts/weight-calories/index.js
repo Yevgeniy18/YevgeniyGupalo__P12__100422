@@ -4,6 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 
 const CustomTooltip = ({ active, payload, label }) => {
 	if (active && payload && payload.length) {
+
 		return (
 			<div className="custom-tooltip">
 				<p className="kg">{`${payload[0].value}`}kg</p>

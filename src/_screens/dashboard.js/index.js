@@ -140,6 +140,9 @@ function DashBoard({ user }) {
 		return handleMockedData(user);
 	};
 
+	/**
+	 * In order to test the mock data, set the data value to false 
+	 */
 	return <section>{init(data)};</section>;
 }
 

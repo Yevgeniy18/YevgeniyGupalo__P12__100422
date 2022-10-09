@@ -57,6 +57,8 @@
 
 .custom-tooltip {
 	background-color: #e60000;
+	border: none;
+	outline: none;
 	color: #fff;
 	padding: 12px;
 	display: flex;
