@@ -143,7 +143,7 @@ function DashBoard({ user }) {
 	/**
 	 * In order to test the mock data, set the data value to false 
 	 */
-	return <section>{init(data)};</section>;
+	return <section>{init(!data)};</section>;
 }
 
 export default DashBoard;
